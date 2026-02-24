@@ -1,0 +1,198 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  height: var(--topbar-h);
+  background: var(--white);
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  gap: 1.25rem;
+  transition: box-shadow var(--t-med) var(--ease), border-color var(--t-med) var(--ease);
+
+  &.scrolled {
+    box-shadow: var(--shadow-md);
+    border-color: var(--blue);
+  }
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+  min-width: var(--sidebar-w);
+
+  @media (max-width: 900px) { min-width: auto; }
+}
+
+.menuBtn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background var(--t-fast);
+
+  @media (max-width: 900px) { display: flex; }
+
+  &:hover { background: var(--blue-light); }
+
+  span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--blue);
+    border-radius: 2px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  transition: opacity var(--t-fast);
+  &:hover { opacity: 0.82; }
+}
+
+.logoIcon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logoMain {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.logoSub {
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--gray);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  @media (max-width: 700px) { display: none; }
+}
+
+.center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 600px) { display: none; }
+}
+
+.search {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.85rem;
+  width: 16px;
+  height: 16px;
+  color: var(--gray);
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--text);
+  background: var(--gray-light);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0.55rem 3rem 0.55rem 2.5rem;
+  outline: none;
+  transition: border-color var(--t-fast), background var(--t-fast), box-shadow var(--t-fast);
+
+  &::placeholder { color: var(--gray); }
+
+  &:focus {
+    border-color: var(--blue);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(0,48,135,0.08);
+  }
+}
+
+.searchKbd {
+  position: absolute;
+  right: 0.75rem;
+  font-size: 0.65rem;
+  color: var(--gray);
+  background: var(--border);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  pointer-events: none;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background: var(--border);
+
+  @media (max-width: 700px) { display: none; }
+}
+
+.btnOutline {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--blue);
+  padding: 0.42rem 1rem;
+  border: 2px solid var(--blue);
+  border-radius: 7px;
+  transition: all var(--t-fast);
+  white-space: nowrap;
+
+  @media (max-width: 700px) { display: none; }
+
+  &:hover { background: var(--blue); color: var(--white); }
+}
+
+.btnPrimary {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--blue-dark);
+  padding: 0.42rem 1rem;
+  background: var(--yellow);
+  border: 2px solid var(--yellow);
+  border-radius: 7px;
+  transition: all var(--t-fast);
+  white-space: nowrap;
+
+  &:hover {
+    background: var(--yellow-dark);
+    border-color: var(--yellow-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(245,168,0,0.4);
+  }
+}

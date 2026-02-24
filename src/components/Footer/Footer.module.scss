@@ -1,0 +1,105 @@
+.footer { background: var(--blue-dark); }
+
+.inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: 260px repeat(4, 1fr);
+  gap: 2.5rem;
+
+  @media (max-width: 1100px) { grid-template-columns: 1fr 1fr 1fr; }
+  @media (max-width: 700px)  { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 480px)  { grid-template-columns: 1fr; }
+}
+
+.brand {
+  @media (max-width: 1100px) { grid-column: 1 / -1; }
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.brandSvg { width: 40px; height: 40px; flex-shrink: 0; }
+
+.brandName {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.brandTagline {
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.brandDesc {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.65;
+}
+
+.col {}
+
+.colTitle {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 0.85rem;
+}
+
+.colLink {
+  display: block;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+  padding: 0.25rem 0;
+  transition: color var(--t-fast), padding-left var(--t-fast);
+
+  &:hover { color: rgba(255,255,255,0.9); padding-left: 4px; }
+}
+
+.ext { opacity: 0.55; font-size: 0.7rem; }
+
+.bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 1rem 0;
+}
+
+.bottomInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.74rem;
+  color: rgba(255,255,255,0.3);
+
+  @media (max-width: 580px) { flex-direction: column; align-items: flex-start; }
+}
+
+.bottomLinks {
+  display: flex;
+  gap: 1.25rem;
+
+  a {
+    color: rgba(255,255,255,0.3);
+    font-size: 0.74rem;
+    transition: color var(--t-fast);
+    &:hover { color: rgba(255,255,255,0.7); }
+  }
+}
